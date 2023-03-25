@@ -6,7 +6,7 @@ import Modal from "react-modal";
 import Zoom from "react-reveal/Zoom";
 import { removeFromCart } from "../actions/cartActions";
 import { createOrder, clearOrder } from "../actions/orderActions";
-
+import { baseUrl } from '../shared/baseUrl';
 class Cart extends Component {
   constructor(props) {
     super(props);
@@ -98,7 +98,7 @@ class Cart extends Component {
                 {cartItems.map((item) => (
                   <li key={item._id}>
                     <div>
-                      <img src={item.image} alt={item.title}></img>
+                      <img src={baseUrl + item.image} alt={item.title}></img>
                     </div>
                     <div>
                       <div>{item.title}</div>

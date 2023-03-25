@@ -1,7 +1,7 @@
 import { CREATE_ORDER, CLEAR_CART, CLEAR_ORDER, FETCH_ORDERS } from "../types";
-
+import { baseUrl } from '../shared/baseUrl';
 export const createOrder = (order) => (dispatch) => {
-  fetch("/orders", {
+  fetch(baseUrl + "orders", {
     method: "POST",
     headers: {
       "Content-Type": "application/json",
@@ -19,7 +19,7 @@ export const clearOrder = () => (dispatch) => {
   dispatch({ type: CLEAR_ORDER });
 };
 export const fetchOrders = () => (dispatch) => {
-  fetch("/orders")
+  fetch(baseUrl + "orders")
     .then((res) => res.json())
     .then((data) => {
       dispatch({ type: FETCH_ORDERS, payload: data });

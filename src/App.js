@@ -1,7 +1,7 @@
 import React from "react";
 import store from "./store";
 import { Provider } from "react-redux";
-import { BrowserRouter, Route,Routes, Link } from "react-router-dom";
+import { BrowserRouter, Route, Routes, Link } from "react-router-dom";
 import HomeScreen from "./screens/HomeScreen";
 import AdminScreen from "./screens/AdminScreen";
 
@@ -17,8 +17,8 @@ class App extends React.Component {
             </header>
             <main>
               <Routes>
-                <Route path="/admin" component={AdminScreen} />
-                <Route path="/" component={HomeScreen} exact />
+                <Route path="/admin" element={<AdminScreen/>} />
+                <Route path="/" element={<HomeScreen/>} exact />
               </Routes>
             </main>
             <footer>All right is reserved.</footer>
