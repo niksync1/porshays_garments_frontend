@@ -1,10 +1,10 @@
 import React from "react";
 import store from "./store";
 import { Provider } from "react-redux";
-import { BrowserRouter, Route, Routes, Link } from "react-router-dom";
+import { BrowserRouter, Route, Routes} from "react-router-dom";
 import HomeScreen from "./screens/HomeScreen";
 import AdminScreen from "./screens/AdminScreen";
-
+import Header from "./components/HeaderComponent";
 class App extends React.Component {
   render() {
     return (
@@ -12,8 +12,7 @@ class App extends React.Component {
         <BrowserRouter>
           <div className="grid-container">
             <header>
-              <Link to="/">React Shopping Cart</Link>
-              <Link to="/admin">Admin</Link>
+              <Header/>
             </header>
             <main>
               <Routes>
